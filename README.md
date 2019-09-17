@@ -1,5 +1,5 @@
 # LinusWare
-Converting Complaints to Reality.
+Converting Complaints to Reality. Compiled Repository downloadable under Releases
 
 ## Directory
 Program|Description
