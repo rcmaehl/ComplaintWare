@@ -1,2 +1,7 @@
-# ZenbookProDuoMouse
-Allow Z and X to be used as left/right click on the Zenbook Pro Duo
+# LinusWare
+Converting Complaints to Reality.
+
+## Directory
+Program|Description
+--|--
+ZenPro Left Mouse|Allows using the Z and X keys on the keyboard as left and right click respectively.
