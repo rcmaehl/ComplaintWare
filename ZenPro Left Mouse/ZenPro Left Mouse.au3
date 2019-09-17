@@ -1,4 +1,13 @@
 #RequireAdmin
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Icon=C:\Program Files (x86)\AutoIt3\Aut2Exe\Icons\AutoIt_Main_v11_256x256_RGB-A.ico
+#AutoIt3Wrapper_Res_Description=Allows using the Z and X keys on the keyboard as left and right click respectively when Scroll Lock is enabled.
+#AutoIt3Wrapper_Res_Fileversion=1.0.0.0
+#AutoIt3Wrapper_Res_ProductName=ZenPro Left Mouse
+#AutoIt3Wrapper_Res_ProductVersion=1.0.0.0
+#AutoIt3Wrapper_Res_LegalCopyright=Robert Maehl (rcmaehl)
+#AutoIt3Wrapper_Res_Language=1033
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <Misc.au3>
 #include <AutoItConstants.au3>
 
