@@ -200,3 +200,28 @@ Func _SteamGetGamesDetailsFromLibrary($sLibrary, $sDetails)
 	WEnd
 
 EndFunc
+
+
+; #FUNCTION# ====================================================================================================================
+; Name ..........: _SteamGetGameManifest
+; Description ...: Obtains the manifest file for a specified AppID
+; Syntax ........: _SteamGetGameManifest($sLibrary, $iAppID)
+; Parameters ....: $sLibrary            - Path to a valid Steam Library
+;                  $iAppID              - The Steam Game AppID
+; Return values .: Success - Returns an array of Steam game details
+;                  Failure - Returns 0 and sets @error:
+;                  |1 - Steam Library Empty
+; Author ........: rcmaehl (Robert Maehl)
+; Modified ......: 11/30/19
+; Remarks .......: Steam manifests do not include the location of the executable
+; Related .......:
+; Link ..........:
+; Example .......: No
+; ===============================================================================================================================
+Func _SteamGetGameManifest($sLibrary, $iAppID)
+
+	Local $hSearch = FileFindFirstFile($sLibrary & "\steamapps\appmanifest_*.acf")
+
+	If $hSearch = -1 Then SetError(1,0,0)
+
+EndFunc
