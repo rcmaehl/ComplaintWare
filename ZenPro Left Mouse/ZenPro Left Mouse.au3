@@ -1,26 +1,26 @@
 #RequireAdmin
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Icon=C:\Program Files (x86)\AutoIt3\Aut2Exe\Icons\AutoIt_Main_v11_256x256_RGB-A.ico
+#AutoIt3Wrapper_Icon=..\..\..\..\Program Files (x86)\AutoIt3\Aut2Exe\Icons\AutoIt_Main_v11_256x256_RGB-A.ico
 #AutoIt3Wrapper_Res_Description=Allows using the Z and X keys on the keyboard as left and right click respectively when Scroll Lock is enabled.
-#AutoIt3Wrapper_Res_Fileversion=1.0.0.0
+#AutoIt3Wrapper_Res_Fileversion=1.1.0.0
 #AutoIt3Wrapper_Res_ProductName=ZenPro Left Mouse
-#AutoIt3Wrapper_Res_ProductVersion=1.0.0.0
+#AutoIt3Wrapper_Res_ProductVersion=1.1.0.0
 #AutoIt3Wrapper_Res_LegalCopyright=Robert Maehl (rcmaehl)
 #AutoIt3Wrapper_Res_Language=1033
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <Misc.au3>
 #include <AutoItConstants.au3>
+HotKeySet("{PAUSE}", "_TOGGLE")
+
+Global $bEnabled = False
 
 Main()
 
-Func _GetScrollLock()
-    Local $ret
-	Local Const $VK_SCROLL = 0x91
-    $ret = DllCall("user32.dll","long","GetKeyState","long",$VK_SCROLL)
-    Return $ret[0]
-EndFunc   ;==>_GetScrollLock
-
 Func NullFunc()
+EndFunc
+
+Func _Toggle()
+	$bEnabled = Not $bEnabled
 EndFunc
 
 Func Main()
@@ -29,7 +29,7 @@ Func Main()
 	Local $aKey[2] = [False,False]
 
 	While 1
-		If _GetScrollLock() Then
+		If $bEnabled Then
 			; Block Text Being Sent to Inputs
 			HotKeySet("z", "NullFunc")
 			HotKeySet("x", "NullFunc")
